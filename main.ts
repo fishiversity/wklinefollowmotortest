@@ -1,12 +1,21 @@
+function turnLeft () {
+    wuKong.setAllMotor(0, -80)
+}
 input.onButtonPressed(Button.A, function () {
-    wuKong.setAllMotor(-80, 0)
+    turnRight()
 })
+function turnRight () {
+    wuKong.setAllMotor(-80, 0)
+}
 input.onButtonPressed(Button.AB, function () {
-    wuKong.setAllMotor(-100, -100)
+    forward()
 })
 input.onButtonPressed(Button.B, function () {
-    wuKong.setAllMotor(0, -80)
+    turnLeft()
 })
 input.onGesture(Gesture.Shake, function () {
     wuKong.stopAllMotor()
 })
+function forward () {
+    wuKong.setAllMotor(-100, -100)
+}
